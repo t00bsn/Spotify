@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <Canvas x:Name="LoginCanvas" Background="#FF212529">
+        <Canvas x:Name="LoginCanvas" Background="#FF212529" d:IsHidden="True">
             <TextBlock x:Name="TB_Willkommen"  Canvas.Left="218" TextWrapping="Wrap" Canvas.Top="36" Height="122" Width="364" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="45" FontWeight="Bold" TextAlignment="Center" Foreground="#FFF8F9FA"><Run Language="de-de" Text="Willkommen bei"/><LineBreak/><Run Language="de-de" Text="Tobify / Didify"/></TextBlock>
             <Button x:Name="Btn_anmelden" Content="anmelden" Canvas.Left="352" Canvas.Top="316" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="96" Background="#FF495057" BorderBrush="{x:Null}" Foreground="#FFF8F9FA" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="Btn_anmelden_Click"/>
             <PasswordBox x:Name="PB_passwort" Canvas.Left="245" Canvas.Top="274" Width="310" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Background="#FF495057" Foreground="#FFF8F9FA" BorderBrush="{x:Null}"/>
@@ -15,6 +15,12 @@
             <Label x:Name="Lbl_BenutzerEingeben" Content="Benutzer eingeben" Canvas.Left="245" Canvas.Top="178" Foreground="#FFF8F9FA" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBox x:Name="TB_benutzer" Canvas.Left="245" TextWrapping="Wrap" Canvas.Top="204" Width="310" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="{x:Null}" Height="26" Background="#FF495057" Foreground="#FFF0F9FA"/>
             <Label x:Name="Lbl_Fehlermeldung" Content="Benutzer oder Passwort falsch, versuche es erneut!" Canvas.Left="249" Canvas.Top="371" Foreground="#FFF8F9FA" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Width="302"/>
+        </Canvas>
+
+        <Canvas Height="434" Width="800">
+            <PasswordBox x:Name="PB_PasswortRegistrieren" Canvas.Left="116" Canvas.Top="171" Width="120"/>
+            <Button x:Name="Btn_Registrieren" Content="Button" Canvas.Left="116" Canvas.Top="217" RenderTransformOrigin="-0.067,-0.674" Click="Btn_Registrieren_Click"/>
+            <TextBox x:Name="TB_BenutzerRegistrieren" Canvas.Left="116" TextWrapping="Wrap" Text="TextBox" Canvas.Top="130" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Canvas>
         <Image Margin="-421,197,859,63" Source="/Image1.png" Stretch="Fill"/>
     </Grid>

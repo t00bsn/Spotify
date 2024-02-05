@@ -75,5 +75,30 @@ namespace Spotify
             // Nach den Befehl wird die Connection zur Login-Tabelle geschlossen, weil ja der Login erfolgreich war.
 
         }
+
+        private void Btn_Registrieren_Click(object sender, RoutedEventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
+
+            string BenutzerRegisterEingegeben = TB_BenutzerRegistrieren.Text.ToString();
+            string PasswortRegisterEingeben   = PB_PasswortRegistrieren.Password.ToString();
+
+
+            string registerQuery = "INSERT INTO login (Benutzername, Passwort) VALUES (@Benutzername, @Passwort)";
+            MySqlCommand registerCmd = new MySqlCommand(registerQuery, conn);
+            registerCmd.Parameters.AddWithValue("@Benutzername", BenutzerRegisterEingegeben);
+            registerCmd.Parameters.AddWithValue("@Passwort", PasswortRegisterEingeben);
+
+            int rowsAffected = registerCmd.ExecuteNonQuery();
+
+            if (rowsAffected > 0)
+            {
+                MessageBox.Show("Registrierung erfolgreich!");
+            }
+            else
+                MessageBox.Show("Registrierung fehlgeschlagen, versuche es nochmals!");
+            conn.Close();
+        }
     }
 }
