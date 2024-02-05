@@ -18,6 +18,7 @@ namespace Spotify
     {
         public MainWindow()
         {
+        Hallo Toby
             InitializeComponent();
         }
     }
