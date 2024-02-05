@@ -22,6 +22,21 @@ namespace Spotify
             
         }
 
-        
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+
+        private void Btn_anmelden_Click(object sender, RoutedEventArgs e)
+        {
+            string BenutzerEingegeben = TB_benutzer.Text.ToString();
+            string PasswortEingegeben = PB_passwort.Password.ToString();
+
+            if (BenutzerEingegeben == "admin" && PasswortEingegeben == "admin")
+            {
+                LoginCanvas.Visibility = Visibility.Hidden;
+            }
+        }
     }
 }
