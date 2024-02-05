@@ -19,6 +19,7 @@ namespace Spotify
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }
