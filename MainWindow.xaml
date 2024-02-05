@@ -5,6 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Spotify"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Button x:Name="Song" Content="Song" HorizontalAlignment="Left" Margin="31,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.148,0.24" Click="Button_Click"/>
+        <Label x:Name="AusgabeTest" Content="Label" HorizontalAlignment="Left" Margin="31,70,0,0" VerticalAlignment="Top" Height="147" Width="735"/>
+        <ListBox x:Name="Lb_Ausgabe" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="31,222,184,67"/>
+    </Grid>
 </Window>
