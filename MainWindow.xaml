@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:Spotify"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
-    <Grid/>
+
+    <Grid>
+        <Label x:Name="Lbl1" Content="" HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Width="173" Background="#FF343A40"/>
+        <Label x:Name="Lbl2" Content="Label" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="627" Margin="173,362,0,0"/>
+        <Label x:Name="Lbl3" Content="Label" HorizontalAlignment="Left" Height="362" VerticalAlignment="Top" Width="627" Margin="173,0,0,0"/>
+        <Image Margin="-401,130,839,130" Source="/Image1.png" Stretch="Fill"/>
+    </Grid>
 </Window>
