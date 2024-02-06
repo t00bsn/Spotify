@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Spotify
 {
     /// <summary>
@@ -22,6 +23,11 @@ namespace Spotify
             
         }
 
-        
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //Bei Programmstart wird der Bildschirm auf FullScreen gezogen
+            Application.Current.MainWindow.WindowState = WindowState.Maximized;
+
+        }
     }
 }

@@ -1,16 +1,16 @@
-﻿<Window x:Class="Spotify.MainWindow"
+﻿<Window x:Name="MainWindow1" x:Class="Spotify.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Spotify"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1080" Width="1920" Loaded="Window_Loaded">
 
     <Grid>
         <Label x:Name="Lbl1" Content="" HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Width="173" Background="#FF343A40"/>
         <Label x:Name="Lbl2" Content="Label" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="627" Margin="173,362,0,0"/>
-        <Label x:Name="Lbl3" Content="Label" HorizontalAlignment="Left" Height="362" VerticalAlignment="Top" Width="627" Margin="173,0,0,0"/>
-        <Image Margin="-401,130,839,130" Source="/Image1.png" Stretch="Fill"/>
+        <Label x:Name="Lbl3" Content="Label" HorizontalAlignment="Left" Height="362" VerticalAlignment="Top" Width="627" Margin="173,0,0,0" RenderTransformOrigin="0.5,0.5"/>
+        <Image Margin="-1065,472,1575,1140" Source="/Image1.png" Stretch="Fill"/>
     </Grid>
 </Window>
