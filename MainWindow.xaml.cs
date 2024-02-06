@@ -31,7 +31,15 @@ namespace Spotify
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //Beide Fehlermeldung-Label sind am Anfang dauerhaft ausgeblendet!
             Lbl_Fehlermeldung.Visibility = Visibility.Hidden;
+            Lbl_FehlermeldungRegister.Visibility = Visibility.Hidden;
+
+            //Register-Tab ist ausgeblendet bei Programmstart
+            RegisterCanvas.Visibility = Visibility.Hidden;
+
+            //Designverbesserungen:
+
         }
 
 
@@ -55,6 +63,14 @@ namespace Spotify
 
             if (reader.Read())
             {
+/*                TB_benutzer.BorderBrush = Brushes.Green;
+                TB_benutzer.BorderThickness = new Thickness(3);
+
+                PB_passwort.BorderBrush = Brushes.Green;
+                PB_passwort.BorderThickness = new Thickness(3);
+*/              
+                //Eventuell eine Verzögerung einbauen und Code (siehe oben) einbauen.
+
                 LoginCanvas.Visibility = Visibility.Hidden;
             }
             else
@@ -68,11 +84,14 @@ namespace Spotify
                 PB_passwort.Clear();
                 PB_passwort.BorderBrush = Brushes.Red;
                 PB_passwort.BorderThickness = new Thickness(3);
+
+                Lbl_Fehlermeldung.Visibility = Visibility.Visible;
+                
             }
 
             reader.Close(); 
             conn.Close();
-            // Nach den Befehl wird die Connection zur Login-Tabelle geschlossen, weil ja der Login erfolgreich war.
+            // Nach dem ausgeführten Befehl wird die Connection zur Login-Tabelle geschlossen, weil ja der Login erfolgreich war.
 
         }
 
@@ -84,21 +103,51 @@ namespace Spotify
             string BenutzerRegisterEingegeben = TB_BenutzerRegistrieren.Text.ToString();
             string PasswortRegisterEingeben   = PB_PasswortRegistrieren.Password.ToString();
 
+            //Überprüft ob User schon bereits angelegt worden ist.
+            string checkUserQuery = "SELECT COUNT(*) FROM login WHERE Benutzername = @Benutzername";
+            MySqlCommand checkUserCmd = new MySqlCommand(checkUserQuery, conn);
+            checkUserCmd.Parameters.AddWithValue("@Benutzername", BenutzerRegisterEingegeben);
 
-            string registerQuery = "INSERT INTO login (Benutzername, Passwort) VALUES (@Benutzername, @Passwort)";
-            MySqlCommand registerCmd = new MySqlCommand(registerQuery, conn);
-            registerCmd.Parameters.AddWithValue("@Benutzername", BenutzerRegisterEingegeben);
-            registerCmd.Parameters.AddWithValue("@Passwort", PasswortRegisterEingeben);
+            int userCount = Convert.ToInt32(checkUserCmd.ExecuteScalar());
 
-            int rowsAffected = registerCmd.ExecuteNonQuery();
-
-            if (rowsAffected > 0)
+            if(userCount > 0)
             {
-                MessageBox.Show("Registrierung erfolgreich!");
+                Lbl_FehlermeldungRegister.Visibility = Visibility.Visible;
+                Lbl_FehlermeldungRegister.Content = "Benutzername ist bereits in Verwendung!";
             }
             else
-                MessageBox.Show("Registrierung fehlgeschlagen, versuche es nochmals!");
+            {
+                string registerQuery = "INSERT INTO login (Benutzername, Passwort) VALUES (@Benutzername, @Passwort)";
+                MySqlCommand cmd = new MySqlCommand(registerQuery, conn);
+
+                cmd.Parameters.AddWithValue("@Benutzername", BenutzerRegisterEingegeben);
+                cmd.Parameters.AddWithValue("@Passwort", PasswortRegisterEingeben);
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    Lbl_FehlermeldungRegister.Visibility = Visibility.Visible;
+                    Lbl_FehlermeldungRegister.Content = "Registrierung erfolgreich!";
+                }
+                else
+                    Lbl_FehlermeldungRegister.Visibility = Visibility.Visible;
+                    Lbl_FehlermeldungRegister.Content = "Registrierung fehlgeschlagen, versuche es nochmals!";
+            }
+
             conn.Close();
+
+        }
+
+        private void Btn_RegisterSwitch_Click(object sender, RoutedEventArgs e)
+        {
+            LoginCanvas.Visibility = Visibility.Hidden;
+            RegisterCanvas.Visibility = Visibility.Visible;
+        }
+
+        private void Btn_zurueckZurAnmeldung_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterCanvas.Visibility = Visibility.Hidden;
+            LoginCanvas.Visibility = Visibility.Visible;
         }
     }
 }
