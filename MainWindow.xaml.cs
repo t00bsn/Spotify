@@ -31,9 +31,18 @@ namespace Spotify
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //Beide Fehlermeldung-Label sind am Anfang dauerhaft ausgeblendet!
+            //MainWindow wird bei Programmstart auf Bildschirm ausgerichtet!
+            Application.Current.MainWindow.WindowState = WindowState.Maximized;
+
+
+            // Fehlermeldung-Label sind beim Programmstart ausgeblendet!
             Lbl_Fehlermeldung.Visibility = Visibility.Hidden;
+
+            Lbl_FehlermeldungRegisterErfolgreich.Visibility = Visibility.Hidden;
             Lbl_FehlermeldungRegister.Visibility = Visibility.Hidden;
+            Lbl_FehlermeldungRegisterUserVerwendet.Visibility = Visibility.Hidden;
+            Lbl_FehlermeldungRegister.Visibility = Visibility.Hidden;
+
 
             //Register-Tab ist ausgeblendet bei Programmstart
             RegisterCanvas.Visibility = Visibility.Hidden;
@@ -97,11 +106,18 @@ namespace Spotify
 
         private void Btn_Registrieren_Click(object sender, RoutedEventArgs e)
         {
+            Lbl_FehlermeldungRegisterErfolgreich.Visibility = Visibility.Hidden;
+            Lbl_FehlermeldungRegister.Visibility = Visibility.Hidden;
+            Lbl_FehlermeldungRegisterUserVerwendet.Visibility = Visibility.Hidden;
+            Lbl_FehlermeldungRegister.Visibility = Visibility.Hidden;
+
+
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
 
             string BenutzerRegisterEingegeben = TB_BenutzerRegistrieren.Text.ToString();
             string PasswortRegisterEingeben   = PB_PasswortRegistrieren.Password.ToString();
+            
 
             //Überprüft ob User schon bereits angelegt worden ist.
             string checkUserQuery = "SELECT COUNT(*) FROM login WHERE Benutzername = @Benutzername";
@@ -112,8 +128,7 @@ namespace Spotify
 
             if(userCount > 0)
             {
-                Lbl_FehlermeldungRegister.Visibility = Visibility.Visible;
-                Lbl_FehlermeldungRegister.Content = "Benutzername ist bereits in Verwendung!";
+                Lbl_FehlermeldungRegisterUserVerwendet.Visibility = Visibility.Visible;
             }
             else
             {
@@ -126,12 +141,10 @@ namespace Spotify
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
-                    Lbl_FehlermeldungRegister.Visibility = Visibility.Visible;
-                    Lbl_FehlermeldungRegister.Content = "Registrierung erfolgreich!";
+                    Lbl_FehlermeldungRegisterErfolgreich.Visibility = Visibility.Visible;
                 }
                 else
                     Lbl_FehlermeldungRegister.Visibility = Visibility.Visible;
-                    Lbl_FehlermeldungRegister.Content = "Registrierung fehlgeschlagen, versuche es nochmals!";
             }
 
             conn.Close();
