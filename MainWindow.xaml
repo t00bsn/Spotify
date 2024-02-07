@@ -12,12 +12,27 @@
             <Label x:Name="BG_Lbl1" Height="1064" Width="461" Background="#FF343A40" HorizontalAlignment="Center" Canvas.Top="0.02" VerticalAlignment="Center"/>
             <Label x:Name="BG_Lbl2" Content="Label" Height="126" Width="1459" Background="#FF9AD4B0" HorizontalAlignment="Left" Canvas.Left="461" Canvas.Top="938" VerticalAlignment="Top"/>
             <Label x:Name="BG_Lbl3" Content="Label" Height="938" Width="1459" RenderTransformOrigin="0.5,0.5" Background="#FFCA9292" HorizontalAlignment="Left" Canvas.Left="461" VerticalAlignment="Center"/>
-            <Ellipse Height="90" Stroke="Black" Width="88" HorizontalAlignment="Left" Canvas.Left="21" Canvas.Top="20" VerticalAlignment="Top">
+            <Ellipse x:Name="El_Profilbild" Height="66" Stroke="Black" Width="65" HorizontalAlignment="Left" Canvas.Left="10" Canvas.Top="10" VerticalAlignment="Top" MouseLeftButtonDown="El_Profilbild_MouseLeftButtonDown">
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="/1674811924048.jpg"/>
                 </Ellipse.Fill>
             </Ellipse>
-            <Label x:Name="Lbl_WillkommenUser" Content="Willkommen [username]!" Height="42" Width="347" FontWeight="Bold" FontSize="25" HorizontalAlignment="Left" Canvas.Left="114" Canvas.Top="44" VerticalAlignment="Top" Foreground="White"/>
+            <Label x:Name="Lbl_WillkommenUser" Content="Willkommen [username]!" Height="34" Width="347" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Canvas.Left="80" Canvas.Top="26" VerticalAlignment="Top" Foreground="White"/>
+            <Label x:Name="Lbl_DeineLieblingskünstler" Content="Deine Lieblingskünstler:" Height="51" Width="353" FontWeight="Bold" FontSize="30" Canvas.Left="25" Canvas.Top="222" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Ellipse x:Name="El_reezy" Height="136" Width="136" Canvas.Left="25" Canvas.Top="296" HorizontalAlignment="Center" VerticalAlignment="Top" MouseLeftButtonDown="El_reezy_MouseLeftButtonDown">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/reezy.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse x:Name="El_Travis_Scott" Height="136" Width="136" Canvas.Left="218" Canvas.Top="296" HorizontalAlignment="Center" VerticalAlignment="Top" MouseLeftButtonDown="El_Travis_Scott_MouseLeftButtonDown">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/travis scott.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Label x:Name="Lbl_reezyName" Content="reezy" Height="37" Width="62" FontWeight="Bold" FontSize="20" Canvas.Left="62" Canvas.Top="432" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label x:Name="Lbl_TravisScottName" Content="Travis Scott" Height="37" Width="120" FontWeight="Bold" FontSize="20" Canvas.Left="226" Canvas.Top="432" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.749"/>
+            <Label x:Name="Lbl_reezy" Content="reezy" Height="938" Width="1459" RenderTransformOrigin="0.5,0.5" Background="#FFCA3D3D" Canvas.Left="461" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label x:Name="Lbl_TravisScott" Content="Travis Scott" Height="938" Width="1459" RenderTransformOrigin="0.5,0.5" Background="#FF123AB3" Canvas.Left="461" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Canvas>
     </Grid>
 </Window>

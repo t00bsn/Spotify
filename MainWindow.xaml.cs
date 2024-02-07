@@ -31,7 +31,31 @@ namespace Spotify
             //Bei Programmstart steht oben links der Name des Users! FUNKTÌONIERT NOCH NICHT MUSS NOCH GEMERGED WERDEN
             //Lbl_WillkommenUser.Content = "Willkommen" + TB_BenutzerName.Text;
 
+            //Labels von den Künstlern ausblenden
+            Lbl_reezy.Visibility = Visibility.Hidden;
+            Lbl_TravisScott.Visibility = Visibility.Hidden;
+        }
+
+        private void El_reezy_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Lbl_TravisScott.Visibility = Visibility.Hidden;
+            Lbl_reezy.Visibility = Visibility.Visible;
 
         }
+
+        private void El_Profilbild_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Lbl_reezy.Visibility = Visibility.Hidden;
+            Lbl_TravisScott.Visibility = Visibility.Hidden;
+        }
+
+        private void El_Travis_Scott_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Lbl_TravisScott.Visibility = Visibility.Visible;
+            Lbl_reezy.Visibility = Visibility.Hidden;
+
+        }
+
+        
     }
 }
