@@ -8,9 +8,16 @@
         Title="MainWindow" Height="1080" Width="1920" Loaded="Window_Loaded">
 
     <Grid>
-        <Label x:Name="Lbl1" Content="" HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Width="173" Background="#FF343A40"/>
-        <Label x:Name="Lbl2" Content="Label" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="627" Margin="173,362,0,0"/>
-        <Label x:Name="Lbl3" Content="Label" HorizontalAlignment="Left" Height="362" VerticalAlignment="Top" Width="627" Margin="173,0,0,0" RenderTransformOrigin="0.5,0.5"/>
-        <Image Margin="-1065,472,1575,1140" Source="/Image1.png" Stretch="Fill"/>
+        <Canvas>
+            <Label x:Name="BG_Lbl1" Height="1064" Width="461" Background="#FF343A40" HorizontalAlignment="Center" Canvas.Top="0.02" VerticalAlignment="Center"/>
+            <Label x:Name="BG_Lbl2" Content="Label" Height="126" Width="1459" Background="#FF9AD4B0" HorizontalAlignment="Left" Canvas.Left="461" Canvas.Top="938" VerticalAlignment="Top"/>
+            <Label x:Name="BG_Lbl3" Content="Label" Height="938" Width="1459" RenderTransformOrigin="0.5,0.5" Background="#FFCA9292" HorizontalAlignment="Left" Canvas.Left="461" VerticalAlignment="Center"/>
+            <Ellipse Height="90" Stroke="Black" Width="88" HorizontalAlignment="Left" Canvas.Left="21" Canvas.Top="20" VerticalAlignment="Top">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/1674811924048.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Label x:Name="Lbl_WillkommenUser" Content="Willkommen [username]!" Height="42" Width="347" FontWeight="Bold" FontSize="25" HorizontalAlignment="Left" Canvas.Left="114" Canvas.Top="44" VerticalAlignment="Top" Foreground="White"/>
+        </Canvas>
     </Grid>
 </Window>

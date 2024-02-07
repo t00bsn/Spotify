@@ -28,6 +28,10 @@ namespace Spotify
             //Bei Programmstart wird der Bildschirm auf FullScreen gezogen
             Application.Current.MainWindow.WindowState = WindowState.Maximized;
 
+            //Bei Programmstart steht oben links der Name des Users! FUNKTÌONIERT NOCH NICHT MUSS NOCH GEMERGED WERDEN
+            //Lbl_WillkommenUser.Content = "Willkommen" + TB_BenutzerName.Text;
+
+
         }
     }
 }
