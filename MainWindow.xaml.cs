@@ -20,6 +20,7 @@ namespace Spotify
         {
             InitializeComponent();
             
+
         }
 
         
