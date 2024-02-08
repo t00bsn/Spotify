@@ -32,29 +32,34 @@ namespace Spotify
             //Lbl_WillkommenUser.Content = "Willkommen" + TB_BenutzerName.Text;
 
             //Labels von den Künstlern ausblenden
-            Lbl_reezy.Visibility = Visibility.Hidden;
-            Lbl_TravisScott.Visibility = Visibility.Hidden;
+            Canvas_Reezy.Visibility = Visibility.Hidden;
+            Canvas_Reezy.Visibility = Visibility.Hidden;
         }
 
         private void El_reezy_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Lbl_TravisScott.Visibility = Visibility.Hidden;
-            Lbl_reezy.Visibility = Visibility.Visible;
+            Canvas_TravisScott.Visibility = Visibility.Hidden;
+            Canvas_Reezy.Visibility = Visibility.Visible;
+            Canvas_Startbildschirm.Visibility = Visibility.Hidden;
 
         }
 
         private void El_Profilbild_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Lbl_reezy.Visibility = Visibility.Hidden;
-            Lbl_TravisScott.Visibility = Visibility.Hidden;
+            Canvas_Reezy.Visibility = Visibility.Hidden;
+            Canvas_TravisScott.Visibility = Visibility.Hidden;
+            Canvas_Startbildschirm.Visibility = Visibility.Visible;
+
         }
 
         private void El_Travis_Scott_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Lbl_TravisScott.Visibility = Visibility.Visible;
-            Lbl_reezy.Visibility = Visibility.Hidden;
+            Canvas_TravisScott.Visibility = Visibility.Visible;
+            Canvas_Reezy.Visibility = Visibility.Hidden;
+            Canvas_Startbildschirm.Visibility = Visibility.Hidden;
+
         }
 
-        
+
     }
 }
