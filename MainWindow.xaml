@@ -7,8 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <Button x:Name="Song" Content="Song" HorizontalAlignment="Left" Margin="31,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.148,0.24" Click="Button_Click"/>
-        <Label x:Name="AusgabeTest" Content="Label" HorizontalAlignment="Left" Margin="31,70,0,0" VerticalAlignment="Top" Height="147" Width="735"/>
-        <ListBox x:Name="Lb_Ausgabe" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="31,222,184,67"/>
+        <ListBox x:Name="Lb_Ausgabe" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="468,14,10,44"/>
+        <ProgressBar x:Name="SekundenBar" HorizontalAlignment="Left" Height="13" Margin="10,395,0,0" VerticalAlignment="Top" Width="772" Maximum="197" Minimum="-0.1" ValueChanged="SekundenBar_ValueChanged" Value="0" SmallChange="0"/>
+        <Button x:Name="Btn_Tiger" Content="TIGER" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="82" Click="Btn_Tiger_Click"/>
+        <Button x:Name="Btn_ONE_NIGHT_IN_PARIS_DEEP_DOWN" Content="ONE NIGHT IN PARIS/DEEP DOWN" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Height="33" Width="194" Click="Btn_ONE_NIGHT_IN_PARIS_DEEP_DOWN_Click"/>
+        <Button x:Name="Btn_DRIPPED_OUT_IN_DESIGNER" Content="DRIPPED OUT IN DESIGNER" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Height="33" Width="158" Click="Btn_DRIPPED_OUT_IN_DESIGNER_Click"/>
+        <Button x:Name="Btn_STEADY" Content="STEADY" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" Height="29" Width="66" Click="Btn_STEADY_Click"/>
     </Grid>
 </Window>

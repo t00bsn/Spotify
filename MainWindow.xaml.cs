@@ -12,6 +12,10 @@ using System;
 using System.Media;
 using System.IO;
 using MySql.Data.MySqlClient;
+using System.Threading;
+using System.Windows.Threading;
+using System.Data;
+using System.Timers;
 
 
 
@@ -23,18 +27,20 @@ namespace Spotify
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DispatcherTimer timer;
         public MainWindow()
         {
             InitializeComponent();
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            SoundPlayer player = new SoundPlayer("TIGER_Reezy.wav");
-            player.Play();
-            
-        }
+       
+       List<songinformationen> songliste = new List<songinformationen>();
+        
+
+       
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -49,14 +55,84 @@ namespace Spotify
 
             while (reader.Read())
             {
-                Lb_Ausgabe.Items.Add(reader[1] + " " + reader[2]);
+                songliste.Add(new songinformationen(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(), 
+                                                    reader[3].ToString(), Convert.ToDateTime(reader[4]), Convert.ToInt32(reader[5]),
+                                                    reader[6].ToString()));
+
+                
             }
 
+            for (int i = 0; i < songliste.Count; i++)
+            {
+                Lb_Ausgabe.Items.Add(songliste[i].TiteldesSongs + " " + songliste[i].Künstler);
+            }
+
+           
             
+            
+
 
             reader.Close();
             conn.Close();
+            
+            
+            
 
         }
+
+        private void SekundenBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            
+        }
+
+        private void Btn_Tiger_Click(object sender, RoutedEventArgs e)
+        {
+            //TIGER
+            MusikAbspielen(0);
+            timer.Start();
+
+            SekundenBar.Minimum = 0;
+            SekundenBar.Maximum = songliste[0].DauerSEK; 
+            SekundenBar.Value = 0;
+
+
+
+            
+
+
+
+        }
+
+        private void Timer_Tick(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Btn_ONE_NIGHT_IN_PARIS_DEEP_DOWN_Click(object sender, RoutedEventArgs e)
+        {
+            //ONE NIGHT IN PARIS/DEEP DOWN
+            MusikAbspielen(1);
+        }
+
+
+        public void MusikAbspielen(int x)
+        {
+            SoundPlayer player = new SoundPlayer(songliste[x].Song);
+            player.Play();
+        }
+
+        private void Btn_DRIPPED_OUT_IN_DESIGNER_Click(object sender, RoutedEventArgs e)
+        {
+            //DRIPPED OUT IN DESIGNER
+            MusikAbspielen(2);
+        }
+
+        private void Btn_STEADY_Click(object sender, RoutedEventArgs e)
+        {
+            //STEADY
+            MusikAbspielen(3);
+        }
+
+        
     }
 }
