@@ -53,7 +53,6 @@ namespace Spotify
         {
             Lbl_TravisScott.Visibility = Visibility.Visible;
             Lbl_reezy.Visibility = Visibility.Hidden;
-
         }
 
         
