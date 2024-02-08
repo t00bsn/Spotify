@@ -30,6 +30,5 @@
             <Label x:Name="Lbl_FehlermeldungRegisterUserVerwendet" Content="Username bereits in Verwendung!" Foreground="#FFF8F9FA" FontWeight="Bold" Background="{x:Null}" Height="39" Canvas.Left="796" Canvas.Top="860" Width="328" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Label x:Name="Lbl_FehlermeldungRegister" Content="Fehler bei der Registrierung, versuche es erneut!" Foreground="#FFF8F9FA" FontWeight="Bold" Background="{x:Null}" Height="39" Canvas.Left="727" Canvas.Top="917" Width="466" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Canvas>
-        <Image Margin="-1171,391,2479,391" Source="/Image1.png" Stretch="Fill"/>
     </Grid>
 </Window>
