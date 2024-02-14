@@ -5,6 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Spotify"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+        Title="MainWindow" Height="1080" Width="1920" Loaded="Window_Loaded">
+    <Grid>
+        <Canvas x:Name="LoginCanvas" Background="#FF212529" d:IsHidden="True">
+            <TextBlock x:Name="TB_Willkommen"  Canvas.Left="486" TextWrapping="Wrap" Canvas.Top="191" Height="266" Width="948" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="90" FontWeight="Bold" TextAlignment="Center" Foreground="#FFF8F9FA"><Run Language="de-de" Text="Willkommen bei"/><LineBreak/><Run Language="de-de" Text="Tobify / Didify"/></TextBlock>
+            <Button x:Name="Btn_anmelden" Content="anmelden" Canvas.Left="883" Canvas.Top="799" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="152" Background="#FF495057" BorderBrush="{x:Null}" Foreground="#FFF8F9FA" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="Btn_anmelden_Click" FontSize="25"/>
+            <PasswordBox x:Name="PB_passwort" Canvas.Left="736" Canvas.Top="707" Width="447" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Background="#FF495057" Foreground="#FFF8F9FA" BorderBrush="{x:Null}" FontSize="25"/>
+            <Label x:Name="Lbl_PasswortEingeben" Content="Passwort eingeben" Canvas.Left="736" Canvas.Top="657" Foreground="#FFF8F9FA" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30"/>
+            <Label x:Name="Lbl_BenutzerEingeben" Content="Benutzer eingeben" Canvas.Left="736" Canvas.Top="541" Foreground="#FFF8F9FA" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30"/>
+            <TextBox x:Name="TB_benutzer" Canvas.Left="736" TextWrapping="Wrap" Canvas.Top="591" Width="447" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="39" Background="#FF495057" Foreground="#FFF0F9FA" FontSize="25"/>
+            <Label x:Name="Lbl_Fehlermeldung" Content="Benutzer oder Passwort falsch, versuche es erneut!" Canvas.Left="714" Canvas.Top="960" Foreground="#FFF8F9FA" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Width="492" FontSize="20"/>
+            <Button x:Name="Btn_RegisterSwitch" Content="Noch kein Konto? Erstelle eins." Canvas.Left="812" Canvas.Top="867" Height="28" Width="294" BorderBrush="{x:Null}" Foreground="#FFF8F9FA" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="Btn_RegisterSwitch_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Background="{x:Null}" FontSize="20"/>
+        </Canvas>
+
+        <Canvas x:Name="RegisterCanvas" Background="#FF212529" Margin="0,0,0,0">
+            <TextBlock x:Name="TB_RegisterText" TextWrapping="Wrap" FontSize="90" FontWeight="Bold" TextAlignment="Center" Foreground="#FFF8F9FA" Height="124" Canvas.Left="648" Canvas.Top="218" Width="614" HorizontalAlignment="Center" VerticalAlignment="Top"><Run Language="de-de" Text="registrieren"/></TextBlock>
+            <PasswordBox x:Name="PB_PasswortRegistrieren" Canvas.Left="753" Canvas.Top="577" Width="414" Background="#FF495057" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Foreground="#FFF8F9FA" FontSize="25"/>
+            <Button x:Name="Btn_Registrieren" Content="registrieren" Canvas.Left="868" Canvas.Top="648" RenderTransformOrigin="-0.067,-0.674" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="#FF495057" Height="41" Width="174" FontWeight="Bold" Foreground="#FFF8F9FA" Click="Btn_Registrieren_Click" FontSize="25"/>
+            <TextBox x:Name="TB_BenutzerRegistrieren" Canvas.Left="753" TextWrapping="Wrap" Canvas.Top="456" Width="414" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF495057" BorderBrush="{x:Null}" Height="36" Foreground="#FFF8F9FA" FontSize="25"/>
+            <Label x:Name="Lbl_BenutzerEingebenRegister" Content="Benutzer eingeben" Canvas.Left="750" Canvas.Top="404" HorizontalAlignment="Center" VerticalAlignment="Top" Width="282" FontWeight="Bold" Foreground="#FFF8F9FA" Height="52" FontSize="30"/>
+            <Label x:Name="Lbl_PasswortEingebenRegister" Content="Passwort eingeben" Canvas.Left="750" Canvas.Top="527" Width="276" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFF8F9FA" FontWeight="Bold" FontSize="30"/>
+            <Button x:Name="Btn_zurueckZurAnmeldung" Content="&gt; zurück zur Anmeldung" Canvas.Left="852" Canvas.Top="728" RenderTransformOrigin="-0.067,-0.674" BorderBrush="{x:Null}" Height="32" Width="206" FontWeight="Bold" Foreground="#FFF8F9FA" Click="Btn_zurueckZurAnmeldung_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}" FontSize="17"/>
+            <Label x:Name="Lbl_FehlermeldungRegisterErfolgreich" Content="Registrierung erfolgreich!" Foreground="#FFF8F9FA" FontWeight="Bold" Background="{x:Null}" Height="39" Canvas.Left="831" Canvas.Top="806" Width="258" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label x:Name="Lbl_FehlermeldungRegisterUserVerwendet" Content="Username bereits in Verwendung!" Foreground="#FFF8F9FA" FontWeight="Bold" Background="{x:Null}" Height="39" Canvas.Left="796" Canvas.Top="860" Width="328" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label x:Name="Lbl_FehlermeldungRegister" Content="Fehler bei der Registrierung, versuche es erneut!" Foreground="#FFF8F9FA" FontWeight="Bold" Background="{x:Null}" Height="39" Canvas.Left="727" Canvas.Top="917" Width="466" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Canvas>
+    </Grid>
 </Window>
