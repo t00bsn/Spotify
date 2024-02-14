@@ -20,6 +20,8 @@ namespace Spotify
     /// </summary>
     public partial class MainWindow : Window
     {
+        //LoginFenster
+        #region
         private string connectionString = "datasource = 127.0.0.1; port = 3306; username = root; password = root; database = it-woche-2024";
 
         public MainWindow()
@@ -163,5 +165,9 @@ namespace Spotify
             RegisterCanvas.Visibility = Visibility.Hidden;
             LoginCanvas.Visibility = Visibility.Visible;
         }
+
+        #endregion
+
+
     }
 }
