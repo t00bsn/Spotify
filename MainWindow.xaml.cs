@@ -48,6 +48,7 @@ namespace Spotify
             Canvas_TravisScott.Visibility = Visibility.Hidden;
             Canvas_Reezy.Visibility = Visibility.Visible;
             Canvas_Startbildschirm.Visibility = Visibility.Hidden;
+            Lb_AusgabeReezy.Visibility = Visibility.Visible;
 
         }
 
@@ -56,6 +57,7 @@ namespace Spotify
             Canvas_Reezy.Visibility = Visibility.Hidden;
             Canvas_TravisScott.Visibility = Visibility.Hidden;
             Canvas_Startbildschirm.Visibility = Visibility.Visible;
+            
 
         }
 
@@ -64,6 +66,7 @@ namespace Spotify
             Canvas_TravisScott.Visibility = Visibility.Visible;
             Canvas_Reezy.Visibility = Visibility.Hidden;
             Canvas_Startbildschirm.Visibility = Visibility.Hidden;
+            Lb_AusgabeReezy.Visibility = Visibility.Hidden;
 
         }
 
