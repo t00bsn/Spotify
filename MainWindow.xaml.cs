@@ -30,6 +30,8 @@ namespace Spotify
             
         }
 
+        List<songinformationen> songliste = new List<songinformationen>();
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //Bei Programmstart wird der Bildschirm auf FullScreen gezogen
@@ -41,6 +43,33 @@ namespace Spotify
             //Labels von den Künstlern ausblenden
             Canvas_Reezy.Visibility = Visibility.Hidden;
             Canvas_Reezy.Visibility = Visibility.Hidden;
+
+            string connectionString = "datasource = 127.0.0.1; port = 3306; username = root; password = root; database = it-woche-2024";
+
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * from songinformationen", conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                songliste.Add(new songinformationen(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(),
+                                                    reader[3].ToString(), Convert.ToDateTime(reader[4]), Convert.ToInt32(reader[5]),
+                                                    reader[6].ToString()));
+            }
+
+            for (int i = 0; i < songliste.Count; i++)
+            {
+                Lb_AusgabeReezy.Items.Add(songliste[i].TiteldesSongs + " ~ " + songliste[i].Künstler);
+                Lb_AusgabeReezy.FontSize = 30;
+            }
+
+            reader.Close();
+            conn.Close();
+
+
         }
 
         private void El_reezy_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -49,7 +78,10 @@ namespace Spotify
             Canvas_Reezy.Visibility = Visibility.Visible;
             Canvas_Startbildschirm.Visibility = Visibility.Hidden;
             Lb_AusgabeReezy.Visibility = Visibility.Visible;
-
+            Lb_AusgabeTravis.Visibility = Visibility.Hidden;
+            TitelAlbumReezy.Text = songliste[0].Albumname;
+            TitelAlbumReezy.Text.ToUpper(); 
+            
         }
 
         private void El_Profilbild_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -67,9 +99,19 @@ namespace Spotify
             Canvas_Reezy.Visibility = Visibility.Hidden;
             Canvas_Startbildschirm.Visibility = Visibility.Hidden;
             Lb_AusgabeReezy.Visibility = Visibility.Hidden;
+            Lb_AusgabeTravis.Visibility = Visibility.Visible;
 
         }
 
+        private void Lb_AusgabeReezy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MusikAbspielen(Lb_AusgabeReezy.SelectedIndex);
+        }
 
+        public void MusikAbspielen(int x)
+        {
+            SoundPlayer player = new SoundPlayer(songliste[x].Song);
+            player.Play();
+        }
     }
 }
