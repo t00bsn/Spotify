@@ -8,7 +8,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System;
+using System.Media;
+using System.IO;
+using MySql.Data.MySqlClient;
+using System.Threading;
+using System.Windows.Threading;
+using System.Data;
+using System.Timers;
 
 namespace Spotify
 {
