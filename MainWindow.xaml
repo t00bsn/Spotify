@@ -42,6 +42,7 @@
                     </TransformGroup>
                 </Canvas.RenderTransform>
             </Canvas>
+            <Label x:Name="Lbl_DeineLieblingskünstler_Kopieren" Content="Deine Lieblingssongs" Height="51" Width="353" FontWeight="Bold" FontSize="30" Canvas.Left="25" Canvas.Top="576" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Canvas>
     </Grid>
 </Window>
