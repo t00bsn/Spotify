@@ -31,7 +31,7 @@
             <Label x:Name="Lbl_TravisScottName" Content="Travis Scott" Height="37" Width="120" FontWeight="Bold" FontSize="20" Canvas.Left="226" Canvas.Top="432" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.749"/>
             <Canvas x:Name="Canvas_Startbildschirm" Height="974" Width="1454" Canvas.Left="466" Background="#FFCAC486" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Canvas x:Name="Canvas_TravisScott" Height="974" Width="1454" Background="#FF29679E" Canvas.Left="466"/>
-            <Canvas x:Name="Canvas_Reezy" Height="979" Width="1459" Canvas.Left="466" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFCA8686" Canvas.Top="-5"/>
+            <Canvas x:Name="Canvas_Reezy" Height="979" Width="1459" Canvas.Left="461" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFCA8686"/>
             <Canvas x:Name="Canvas_SoundBar" Height="90" Width="1454" Canvas.Left="466" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Canvas.Top="974" Background="#FFBB3D3D">
                 <Canvas.RenderTransform>
                     <TransformGroup>
