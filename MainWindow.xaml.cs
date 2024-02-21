@@ -30,7 +30,8 @@ namespace Spotify
             
         }
 
-        List<songinformationen> songliste = new List<songinformationen>();
+        List<songinformationen> songlisteReezy = new List<songinformationen>();
+        List<songinformationen> songlisteTravis = new List<songinformationen>();
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -55,16 +56,18 @@ namespace Spotify
 
             while (reader.Read())
             {
-                songliste.Add(new songinformationen(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(),
+                songlisteReezy.Add(new songinformationen(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(),
                                                     reader[3].ToString(), Convert.ToDateTime(reader[4]), Convert.ToInt32(reader[5]),
                                                     reader[6].ToString()));
             }
 
-            for (int i = 0; i < songliste.Count; i++)
+            for (int i = 0; i < songlisteReezy.Count; i++)
             {
-                Lb_AusgabeReezy.Items.Add(songliste[i].TiteldesSongs + " ~ " + songliste[i].Künstler);
+                Lb_AusgabeReezy.Items.Add(songlisteReezy[i].TiteldesSongs + " ~ " + songlisteReezy[i].Künstler);
                 Lb_AusgabeReezy.FontSize = 30;
             }
+
+
 
             reader.Close();
             conn.Close();
@@ -79,7 +82,7 @@ namespace Spotify
             Canvas_Startbildschirm.Visibility = Visibility.Hidden;
             Lb_AusgabeReezy.Visibility = Visibility.Visible;
             Lb_AusgabeTravis.Visibility = Visibility.Hidden;
-            TitelAlbumReezy.Text = songliste[0].Albumname;
+            TitelAlbumReezy.Text = songlisteReezy[0].Albumname;
             TitelAlbumReezy.Text.ToUpper(); 
             
         }
@@ -105,13 +108,49 @@ namespace Spotify
 
         private void Lb_AusgabeReezy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MusikAbspielen(Lb_AusgabeReezy.SelectedIndex);
+            MusikAbspielenReezy(Lb_AusgabeReezy.SelectedIndex);
         }
 
-        public void MusikAbspielen(int x)
+        public void MusikAbspielenReezy(int x)
         {
-            SoundPlayer player = new SoundPlayer(songliste[x].Song);
+            SoundPlayer player = new SoundPlayer(songlisteReezy[x].Song);
             player.Play();
+        }
+
+        public void MusikAbspielenTravis(int x)
+        {
+            SoundPlayer player = new SoundPlayer(songlisteTravis[x].Song);
+            player.Play();
+        }
+
+        private void Canvas_Loaded(object sender, RoutedEventArgs e)
+        {
+            string connectionString = "datasource = 127.0.0.1; port = 3306; username = root; password = root; database = it-woche-2024";
+
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * from songinformationentravis", conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                songlisteTravis.Add(new songinformationen(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(),
+                                                    reader[3].ToString(), Convert.ToDateTime(reader[4]), Convert.ToInt32(reader[5]),
+                                                    reader[6].ToString()));
+            }
+
+            for (int i = 0; i < songlisteTravis.Count; i++)
+            {
+                Lb_AusgabeTravis.Items.Add(songlisteTravis[i].TiteldesSongs + " ~ " + songlisteTravis[i].Künstler);
+                Lb_AusgabeTravis.FontSize = 30;
+            }
+        }
+
+        private void Lb_AusgabeTravis_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MusikAbspielenTravis(Lb_AusgabeTravis.SelectedIndex);
         }
     }
 }
