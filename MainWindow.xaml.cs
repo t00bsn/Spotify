@@ -82,8 +82,10 @@ namespace Spotify
             Canvas_Startbildschirm.Visibility = Visibility.Hidden;
             Lb_AusgabeReezy.Visibility = Visibility.Visible;
             Lb_AusgabeTravis.Visibility = Visibility.Hidden;
+
             TitelAlbumReezy.Text = songlisteReezy[0].Albumname;
-            TitelAlbumReezy.Text.ToUpper(); 
+            TitelAlbumReezy.Text.ToUpper();
+            KünstlerNameAlbumReezy.Text = "- " + songlisteReezy[0].Künstler;
             
         }
 
@@ -104,6 +106,9 @@ namespace Spotify
             Lb_AusgabeReezy.Visibility = Visibility.Hidden;
             Lb_AusgabeTravis.Visibility = Visibility.Visible;
 
+            TitelAlbumTravisScott.Text = songlisteTravis[0].Albumname;
+            TitelAlbumTravisScott.Text.ToUpper();
+            KünstlerNameAlbumTravisScott.Text = "- " + songlisteTravis[0].Künstler ;
         }
 
         private void Lb_AusgabeReezy_SelectionChanged(object sender, SelectionChangedEventArgs e)
