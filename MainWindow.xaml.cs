@@ -105,6 +105,7 @@ namespace Spotify
             Canvas_Startbildschirm.Visibility = Visibility.Hidden;
             Lb_AusgabeReezy.Visibility = Visibility.Hidden;
             Lb_AusgabeTravis.Visibility = Visibility.Visible;
+            Img_TravisScott.Visibility = Visibility.Visible;
 
             TitelAlbumTravisScott.Text = songlisteTravis[0].Albumname;
             TitelAlbumTravisScott.Text.ToUpper();

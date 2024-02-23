@@ -39,13 +39,13 @@
                 </Canvas>
 
             </Canvas>
-            <Canvas x:Name="Canvas_Reezy" Height="1064" Width="1454" Canvas.Left="466" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF495057" d:IsHidden="True">
-                <ListBox x:Name="Lb_AusgabeReezy" Height="747" Width="1414" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="317" SelectionChanged="Lb_AusgabeReezy_SelectionChanged" Foreground="#FFF8F9FA" Canvas.Left="40"/>
+            <Canvas x:Name="Canvas_Reezy" Height="1064" Width="1454" Canvas.Left="466" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF495057">
                 <Canvas x:Name="RezzyHeadline" Height="312" Width="1454" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF212529">
                     <TextBox x:Name="TitelAlbumReezy" Canvas.Left="386" TextWrapping="Wrap" Text="TextBox" Canvas.Top="96" Width="1064" Background="{x:Null}" Height="120" FontSize="72" BorderBrush="{x:Null}" IsReadOnly="True" SelectionBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" SelectionTextBrush="{x:Null}" Foreground="#FFF8F9FA"/>
-                    <Image x:Name="Img_Reezy" Height="222" Canvas.Left="43" Canvas.Top="45" Width="291" Source="/reezy.jpg"/>
+                    <Image x:Name="Img_Reezy" Height="222" Canvas.Left="43" Canvas.Top="45" Width="291" Source="/reezy.jpg" d:IsHidden="True"/>
                     <TextBox x:Name="KünstlerNameAlbumReezy" Canvas.Left="413" TextWrapping="Wrap" Text="TextBox" Canvas.Top="189" Width="1064" Background="{x:Null}" Height="43" FontSize="30" BorderBrush="{x:Null}" IsReadOnly="True" SelectionBrush="{x:Null}" FontWeight="Bold" SelectionTextBrush="{x:Null}" Foreground="#FFF8F9FA" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 </Canvas>
+                <ListBox x:Name="Lb_AusgabeReezy" Height="747" Width="1414" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="317" SelectionChanged="Lb_AusgabeReezy_SelectionChanged" Foreground="#FFF8F9FA" Canvas.Left="40"/>
             </Canvas>
             <Label x:Name="Lbl_DeineLieblingskünstler_Kopieren" Content="Deine Lieblingssongs" Height="51" Width="353" FontWeight="Bold" FontSize="30" Canvas.Left="25" Canvas.Top="576" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Label x:Name="Lbl_DeineLieblingskünstler_Text" Content="in Bearbeitung (Umsetzung folgt)" Height="51" Width="354" FontWeight="Bold" FontSize="15" Canvas.Left="42" Canvas.Top="632" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>

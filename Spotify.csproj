@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="1674811924048.jpg" />
+    <None Remove="Image3.png" />
     <None Remove="reezy.jpg" />
     <None Remove="travis scott.jpg" />
     <None Remove="travis-scott-wallpaper-onsbze5ivm3a9bx6.jpg" />
@@ -21,6 +22,7 @@
 
   <ItemGroup>
     <Resource Include="1674811924048.jpg" />
+    <Resource Include="Image3.png" />
     <Resource Include="reezy.jpg" />
     <Resource Include="travis scott.jpg" />
     <Resource Include="travis-scott-wallpaper-onsbze5ivm3a9bx6.jpg" />
