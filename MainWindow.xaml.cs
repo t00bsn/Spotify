@@ -29,7 +29,8 @@ namespace Spotify
             InitializeComponent();
             
         }
-
+        private delegate void UpdateProgressBarDelegate(
+        System.Windows.DependencyProperty dp, Object value);
         List<songinformationen> songlisteReezy = new List<songinformationen>();
         List<songinformationen> songlisteTravis = new List<songinformationen>();
 
@@ -82,6 +83,8 @@ namespace Spotify
             Canvas_Startbildschirm.Visibility = Visibility.Hidden;
             Lb_AusgabeReezy.Visibility = Visibility.Visible;
             Lb_AusgabeTravis.Visibility = Visibility.Hidden;
+            PB_SongsReezy.Visibility = Visibility.Visible;
+            Btn_ProcessReezy.Visibility = Visibility.Visible;
 
             TitelAlbumReezy.Text = songlisteReezy[0].Albumname;
             TitelAlbumReezy.Text.ToUpper();
@@ -157,6 +160,44 @@ namespace Spotify
         private void Lb_AusgabeTravis_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MusikAbspielenTravis(Lb_AusgabeTravis.SelectedIndex);
+        }
+
+        private void Process()
+        {
+            int x = songlisteReezy[Lb_AusgabeReezy.SelectedIndex].DauerSEK;
+            PB_SongsReezy.Minimum = 0;
+            PB_SongsReezy.Maximum = short.MaxValue;
+           
+            PB_SongsReezy.Value = 0;
+
+            
+            double value = 0;
+
+            
+            UpdateProgressBarDelegate updatePbDelegate =
+                new UpdateProgressBarDelegate(PB_SongsReezy.SetValue);
+
+           
+            do
+            {
+                value += songlisteReezy[Lb_AusgabeReezy.SelectedIndex].DauerSEK / 100;
+
+                Dispatcher.Invoke(updatePbDelegate,
+                    System.Windows.Threading.DispatcherPriority.Background,
+                    new object[] { ProgressBar.ValueProperty, value });
+            }
+            while (PB_SongsReezy.Value != PB_SongsReezy.Maximum);
+        }
+
+        private void Btn_ProcessReezy_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(PB_SongsReezy.Maximum.ToString());
+            int x = songlisteReezy[Lb_AusgabeReezy.SelectedIndex].DauerSEK;
+            MessageBox.Show(x.ToString());
+            
+            Process();
+
+         
         }
     }
 }
