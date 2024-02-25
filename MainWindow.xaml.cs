@@ -16,6 +16,7 @@ using System.Threading;
 using System.Windows.Threading;
 using System.Data;
 using System.Timers;
+using System.Diagnostics;
 
 namespace Spotify
 {
@@ -36,6 +37,7 @@ namespace Spotify
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            
             //Bei Programmstart wird der Bildschirm auf FullScreen gezogen
             Application.Current.MainWindow.WindowState = WindowState.Maximized;
 
@@ -72,7 +74,7 @@ namespace Spotify
 
             reader.Close();
             conn.Close();
-
+            
 
         }
 
@@ -117,7 +119,7 @@ namespace Spotify
 
         private void Lb_AusgabeReezy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MusikAbspielenReezy(Lb_AusgabeReezy.SelectedIndex);
+            
         }
 
         public void MusikAbspielenReezy(int x)
@@ -159,45 +161,66 @@ namespace Spotify
 
         private void Lb_AusgabeTravis_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MusikAbspielenTravis(Lb_AusgabeTravis.SelectedIndex);
+           
+            
         }
 
-        private void Process()
+        private void Process(ProgressBar PB)
         {
-            int x = songlisteReezy[Lb_AusgabeReezy.SelectedIndex].DauerSEK;
-            PB_SongsReezy.Minimum = 0;
-            PB_SongsReezy.Maximum = short.MaxValue;
-           
-            PB_SongsReezy.Value = 0;
+
+
+            PB.Minimum = 0;
+
+            PB.Maximum = short.MaxValue;
+
+            PB.Value = 0;
 
             
             double value = 0;
 
             
             UpdateProgressBarDelegate updatePbDelegate =
-                new UpdateProgressBarDelegate(PB_SongsReezy.SetValue);
+                new UpdateProgressBarDelegate(PB.SetValue);
 
            
             do
             {
-                value += songlisteReezy[Lb_AusgabeReezy.SelectedIndex].DauerSEK / 100;
+                value += 0.2;
 
                 Dispatcher.Invoke(updatePbDelegate,
                     System.Windows.Threading.DispatcherPriority.Background,
                     new object[] { ProgressBar.ValueProperty, value });
             }
-            while (PB_SongsReezy.Value != PB_SongsReezy.Maximum);
+            while (PB.Value != PB.Maximum);
+
+
+            
         }
 
         private void Btn_ProcessReezy_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(PB_SongsReezy.Maximum.ToString());
+            MusikAbspielenReezy(Lb_AusgabeReezy.SelectedIndex);
+            PB_SongsReezy.Maximum = songlisteReezy[Lb_AusgabeReezy.SelectedIndex].DauerSEK;
+            //MessageBox.Show(PB_SongsReezy.Maximum.ToString());
             int x = songlisteReezy[Lb_AusgabeReezy.SelectedIndex].DauerSEK;
-            MessageBox.Show(x.ToString());
+            //MessageBox.Show(x.ToString());
             
-            Process();
+            Process(PB_SongsReezy);
 
          
+        }
+
+        
+
+        private void Btn_ProcessTravis_Click(object sender, RoutedEventArgs e)
+        {
+            MusikAbspielenTravis(Lb_AusgabeTravis.SelectedIndex);
+            PB_SongsTravis.Maximum = songlisteTravis[Lb_AusgabeTravis.SelectedIndex].DauerSEK;
+            //MessageBox.Show(PB_SongsTravis.Maximum.ToString());
+            int x = songlisteTravis[Lb_AusgabeTravis.SelectedIndex].DauerSEK;
+            //MessageBox.Show(x.ToString());
+
+            Process(PB_SongsTravis);
         }
     }
 }
