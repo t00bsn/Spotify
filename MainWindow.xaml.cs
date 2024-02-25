@@ -17,6 +17,7 @@ using System.Windows.Threading;
 using System.Data;
 using System.Timers;
 using System.Diagnostics;
+using System.Windows.Media.Animation;
 
 namespace Spotify
 {
@@ -89,7 +90,8 @@ namespace Spotify
             Lb_AusgabeTravis.Visibility = Visibility.Hidden;
             PB_SongsReezy.Visibility = Visibility.Visible;
             Btn_ProcessReezy.Visibility = Visibility.Visible;
-
+            Img_HerzTravis.Visibility = Visibility.Hidden;
+            Img_Herz.Visibility = Visibility.Visible;
             TitelAlbumReezy.Text = songlisteReezy[0].Albumname;
             TitelAlbumReezy.Text.ToUpper();
             KünstlerNameAlbumReezy.Text = "- " + songlisteReezy[0].Künstler;
@@ -113,7 +115,8 @@ namespace Spotify
             Lb_AusgabeReezy.Visibility = Visibility.Hidden;
             Lb_AusgabeTravis.Visibility = Visibility.Visible;
             Img_TravisScott.Visibility = Visibility.Visible;
-
+            Img_Herz.Visibility = Visibility.Hidden;
+            Img_HerzTravis.Visibility= Visibility.Visible;
             TitelAlbumTravisScott.Text = songlisteTravis[0].Albumname;
             TitelAlbumTravisScott.Text.ToUpper();
             KünstlerNameAlbumTravisScott.Text = "- " + songlisteTravis[0].Künstler ;
@@ -244,13 +247,14 @@ namespace Spotify
 
            
 
-            MySqlConnection cmd = new MySqlConnection("Insert Into lieblingssongs Values (@Titel des Songs,@Künstler/Interpret,@Albumname,@Erscheinungsjahr,@Dauer,@Song)");
+            string einfügen = "Insert Into lieblingssongs Values (@TiteldesSongs,@Künstler,@Albumname,@Erscheinungsjahr,@Dauer,@Song)";
+            MySqlCommand cmd = new MySqlCommand(einfügen, conn);
 
 
             // Füge Parameter hinzu und setze ihre Werte
-           
-            cmd.Parameters.AddWithValue("@Titel", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].TiteldesSongs);
-            cmd.Parameters.AddWithValue("@Interpret", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].Künstler);
+
+            cmd.Parameters.AddWithValue("@TiteldesSongs", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].TiteldesSongs);
+            cmd.Parameters.AddWithValue("@Künstler", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].Künstler);
             cmd.Parameters.AddWithValue("@Albumname", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].Albumname);
             cmd.Parameters.AddWithValue("@Erscheinungsjahr", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].Erscheinungsjahr);
             cmd.Parameters.AddWithValue("@Dauer", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].DauerSEK);
@@ -258,7 +262,7 @@ namespace Spotify
 
 
            
-            
+            cmd.ExecuteNonQuery();
             conn.Close();
 
 
@@ -287,6 +291,41 @@ namespace Spotify
             }
         }
 
-       
+        private void Img_HerzTravis_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            // Den Pfad zum neuen Bild festlegen
+            string newImagePath = "heart_filled_icon_125259.png";
+
+            // Das Bild ändern
+            ChangeImage(newImagePath);
+
+
+            string connectionString = "datasource = 127.0.0.1; port = 3306; username = root; password = root; database = it-woche-2024";
+
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
+
+
+
+
+
+            string einfügen = "Insert Into lieblingssongs Values (@TiteldesSongs,@Künstler,@Albumname,@Erscheinungsjahr,@Dauer,@Song)";
+            MySqlCommand cmd = new MySqlCommand(einfügen, conn);
+
+
+            // Füge Parameter hinzu und setze ihre Werte
+
+            cmd.Parameters.AddWithValue("@TiteldesSongs", songlisteTravis[Lb_AusgabeTravis.SelectedIndex].TiteldesSongs);
+            cmd.Parameters.AddWithValue("@Künstler", songlisteTravis[Lb_AusgabeTravis.SelectedIndex].Künstler);
+            cmd.Parameters.AddWithValue("@Albumname", songlisteTravis[Lb_AusgabeTravis.SelectedIndex].Albumname);
+            cmd.Parameters.AddWithValue("@Erscheinungsjahr", songlisteTravis[Lb_AusgabeTravis.SelectedIndex].Erscheinungsjahr);
+            cmd.Parameters.AddWithValue("@Dauer", songlisteTravis[Lb_AusgabeTravis.SelectedIndex].DauerSEK);
+            cmd.Parameters.AddWithValue("@Song", songlisteTravis[Lb_AusgabeTravis.SelectedIndex].Song);
+
+
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }

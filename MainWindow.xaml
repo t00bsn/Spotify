@@ -39,9 +39,10 @@
                 </Canvas>
                 <Button x:Name="Btn_ProcessTravis" Content="Song Spielen" Canvas.Left="42" Canvas.Top="725" Height="63" Width="201" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Btn_ProcessTravis_Click" FontSize="24"/>
                 <ProgressBar x:Name="PB_SongsTravis" Height="10" Canvas.Left="274" Canvas.Top="746" Width="623" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Image x:Name="Img_HerzTravis" Height="51" Canvas.Left="925" Canvas.Top="730" Width="71" Source="/heart_icon_125260.png" MouseLeftButtonDown="Img_HerzTravis_MouseLeftButtonDown" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             </Canvas>
-            <Canvas x:Name="Canvas_Reezy" Height="1064" Width="1454" Canvas.Left="466" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF495057" d:IsHidden="True">
+            <Canvas x:Name="Canvas_Reezy" Height="1064" Width="1454" Canvas.Left="466" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF495057">
                 <Canvas x:Name="RezzyHeadline" Height="312" Width="1454" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF212529">
                     <TextBox x:Name="TitelAlbumReezy" Canvas.Left="386" TextWrapping="Wrap" Text="TextBox" Canvas.Top="96" Width="1064" Background="{x:Null}" Height="120" FontSize="72" BorderBrush="{x:Null}" IsReadOnly="True" SelectionBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" SelectionTextBrush="{x:Null}" Foreground="#FFF8F9FA"/>
                     <Image x:Name="Img_Reezy" Height="222" Canvas.Left="43" Canvas.Top="45" Width="291" Source="/reezy.jpg" d:IsHidden="True"/>
@@ -50,10 +51,10 @@
                 <ListBox x:Name="Lb_AusgabeReezy" Height="403" Width="1414" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="317" SelectionChanged="Lb_AusgabeReezy_SelectionChanged" Foreground="#FFF8F9FA" Canvas.Left="40"/>
                 <Button x:Name="Btn_ProcessReezy" Content="Song Spielen" Canvas.Left="40" Canvas.Top="720" Height="68" Width="201" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Btn_ProcessReezy_Click"/>
                 <ProgressBar x:Name="PB_SongsReezy" Height="10" Canvas.Left="271" Canvas.Top="749" Width="626" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <Image x:Name="Img_Herz" Height="54" Canvas.Left="935" Canvas.Top="727" Width="71" Source="/heart_icon_125260.png" MouseLeftButtonDown="Img_Herz_MouseLeftButtonDown" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </Canvas>
             <Label x:Name="Lbl_DeineLieblingskünstler_Kopieren" Content="Deine Lieblingssongs" Height="51" Width="353" FontWeight="Bold" FontSize="30" Canvas.Left="25" Canvas.Top="576" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Label x:Name="Lbl_DeineLieblingskünstler_Text" Content="in Bearbeitung (Umsetzung folgt)" Height="51" Width="354" FontWeight="Bold" FontSize="15" Canvas.Left="42" Canvas.Top="632" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Image x:Name="Img_Herz" Height="54" Canvas.Left="1381" Canvas.Top="730" Width="71" Source="/heart_icon_125260.png" MouseLeftButtonDown="Img_Herz_MouseLeftButtonDown" HorizontalAlignment="Left" VerticalAlignment="Center" />
         </Canvas>
         <Image Margin="-964,532,2522,358" Source="/Image2.png" Stretch="Fill"/>
     </Grid>
