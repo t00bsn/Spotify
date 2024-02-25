@@ -53,6 +53,7 @@
             </Canvas>
             <Label x:Name="Lbl_DeineLieblingskünstler_Kopieren" Content="Deine Lieblingssongs" Height="51" Width="353" FontWeight="Bold" FontSize="30" Canvas.Left="25" Canvas.Top="576" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Label x:Name="Lbl_DeineLieblingskünstler_Text" Content="in Bearbeitung (Umsetzung folgt)" Height="51" Width="354" FontWeight="Bold" FontSize="15" Canvas.Left="42" Canvas.Top="632" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image x:Name="Img_Herz" Height="54" Canvas.Left="1381" Canvas.Top="730" Width="71" Source="/heart_icon_125260.png" MouseLeftButtonDown="Img_Herz_MouseLeftButtonDown" HorizontalAlignment="Left" VerticalAlignment="Center" />
         </Canvas>
         <Image Margin="-964,532,2522,358" Source="/Image2.png" Stretch="Fill"/>
     </Grid>

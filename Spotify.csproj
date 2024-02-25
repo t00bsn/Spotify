@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="1674811924048.jpg" />
+    <None Remove="heart_filled_icon_125259.png" />
+    <None Remove="heart_icon_125260.png" />
     <None Remove="Image3.png" />
     <None Remove="reezy.jpg" />
     <None Remove="travis scott.jpg" />
@@ -22,6 +24,8 @@
 
   <ItemGroup>
     <Resource Include="1674811924048.jpg" />
+    <Resource Include="heart_filled_icon_125259.png" />
+    <Resource Include="heart_icon_125260.png" />
     <Resource Include="Image3.png" />
     <Resource Include="reezy.jpg" />
     <Resource Include="travis scott.jpg" />
