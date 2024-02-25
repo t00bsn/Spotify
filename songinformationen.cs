@@ -8,7 +8,7 @@ namespace Spotify
 {
     internal class songinformationen
     {
-        public static int SongID { get; set; }
+        public  int SongID { get; set; }
         public string TiteldesSongs { get; set; }
         public string Künstler { get; set; }
         public string Albumname { get; set; }

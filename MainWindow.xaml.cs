@@ -139,6 +139,12 @@ namespace Spotify
             player.Play();
         }
 
+       /* public void MusikAbspielenLieblingssongs(int x)
+        {
+           *//* SoundPlayer player = new SoundPlayer(lieblingssongs[x].Song);
+            player.Play();*//*
+        }*/
+
         private void Canvas_Loaded(object sender, RoutedEventArgs e)
         {
             string connectionString = "datasource = 127.0.0.1; port = 3306; username = root; password = root; database = it-woche-2024";
@@ -252,7 +258,7 @@ namespace Spotify
 
 
             // Füge Parameter hinzu und setze ihre Werte
-
+           
             cmd.Parameters.AddWithValue("@TiteldesSongs", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].TiteldesSongs);
             cmd.Parameters.AddWithValue("@Künstler", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].Künstler);
             cmd.Parameters.AddWithValue("@Albumname", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].Albumname);
@@ -309,12 +315,12 @@ namespace Spotify
 
 
 
-            string einfügen = "Insert Into lieblingssongs Values (@TiteldesSongs,@Künstler,@Albumname,@Erscheinungsjahr,@Dauer,@Song)";
+            string einfügen = "Insert Into lieblingssongs Values ( @TiteldesSongs,@Künstler,@Albumname,@Erscheinungsjahr,@Dauer,@Song)";
             MySqlCommand cmd = new MySqlCommand(einfügen, conn);
 
 
             // Füge Parameter hinzu und setze ihre Werte
-
+           
             cmd.Parameters.AddWithValue("@TiteldesSongs", songlisteTravis[Lb_AusgabeTravis.SelectedIndex].TiteldesSongs);
             cmd.Parameters.AddWithValue("@Künstler", songlisteTravis[Lb_AusgabeTravis.SelectedIndex].Künstler);
             cmd.Parameters.AddWithValue("@Albumname", songlisteTravis[Lb_AusgabeTravis.SelectedIndex].Albumname);
@@ -326,6 +332,39 @@ namespace Spotify
 
             cmd.ExecuteNonQuery();
             conn.Close();
+        }
+
+        private void Lb_Lieblingssongs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            /*string connectionString = "datasource = 127.0.0.1; port = 3306; username = root; password = root; database = it-woche-2024";
+
+            MySqlConnection conn = new MySqlConnection(connectionString);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * from lieblingssongs", conn);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                lieblingssongs.Add(new songinformationen(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(),
+                                                    reader[3].ToString(), Convert.ToDateTime(reader[4]), Convert.ToInt32(reader[5]),reader[6].ToString()));
+            }
+
+            for (int i = 0; i < lieblingssongs.Count; i++)
+            {
+                Lb_Lieblingssongs.Items.Add(lieblingssongs[i].TiteldesSongs + " ~ " + lieblingssongs[i].Künstler);
+               
+                Lb_Lieblingssongs.FontSize = 12;
+            }
+
+
+            MusikAbspielenLieblingssongs(Lb_Lieblingssongs.SelectedIndex);*/
         }
     }
 }

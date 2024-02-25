@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920" Loaded="Window_Loaded">
 
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
         <Canvas Loaded="Canvas_Loaded">
-            <Label x:Name="BG_Lbl1" Height="1064" Width="466" Background="#FF343A40" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="BG_Lbl1" Height="1064" Width="466" Background="#FF343A40" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Ellipse x:Name="El_Profilbild" Height="66" Stroke="Black" Width="65" HorizontalAlignment="Left" Canvas.Left="10" Canvas.Top="10" VerticalAlignment="Top" MouseLeftButtonDown="El_Profilbild_MouseLeftButtonDown">
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="/1674811924048.jpg"/>
@@ -37,7 +37,7 @@
                     <TextBox x:Name="KünstlerNameAlbumTravisScott" Canvas.Left="413" TextWrapping="Wrap" Text="TextBox" Canvas.Top="189" Width="1064" Background="{x:Null}" Height="43" FontSize="30" BorderBrush="{x:Null}" IsReadOnly="True" SelectionBrush="{x:Null}" FontWeight="Bold" SelectionTextBrush="{x:Null}" Foreground="#FFF8F9FA" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                     <Image x:Name="Img_TravisScott" Height="220" Source="/Image3.png" Stretch="Fill" Width="220" Canvas.Left="72" Canvas.Top="46"/>
                 </Canvas>
-                <Button x:Name="Btn_ProcessTravis" Content="Song Spielen" Canvas.Left="42" Canvas.Top="725" Height="63" Width="201" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Btn_ProcessTravis_Click" FontSize="24"/>
+                <Button x:Name="Btn_ProcessTravis" Content="Song Spielen" Canvas.Left="42" Canvas.Top="725" Height="63" Width="201" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Btn_ProcessTravis_Click" FontSize="24" Background="#FF343A40" Foreground="White" BorderBrush="#FF343A40"/>
                 <ProgressBar x:Name="PB_SongsTravis" Height="10" Canvas.Left="274" Canvas.Top="746" Width="623" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <Image x:Name="Img_HerzTravis" Height="51" Canvas.Left="925" Canvas.Top="730" Width="71" Source="/heart_icon_125260.png" MouseLeftButtonDown="Img_HerzTravis_MouseLeftButtonDown" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
@@ -49,12 +49,12 @@
                     <TextBox x:Name="KünstlerNameAlbumReezy" Canvas.Left="413" TextWrapping="Wrap" Text="TextBox" Canvas.Top="189" Width="1064" Background="{x:Null}" Height="43" FontSize="30" BorderBrush="{x:Null}" IsReadOnly="True" SelectionBrush="{x:Null}" FontWeight="Bold" SelectionTextBrush="{x:Null}" Foreground="#FFF8F9FA" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 </Canvas>
                 <ListBox x:Name="Lb_AusgabeReezy" Height="403" Width="1414" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="317" SelectionChanged="Lb_AusgabeReezy_SelectionChanged" Foreground="#FFF8F9FA" Canvas.Left="40"/>
-                <Button x:Name="Btn_ProcessReezy" Content="Song Spielen" Canvas.Left="40" Canvas.Top="720" Height="68" Width="201" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Btn_ProcessReezy_Click"/>
+                <Button x:Name="Btn_ProcessReezy" Content="Song Spielen" Canvas.Left="40" Canvas.Top="720" Height="68" Width="201" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Btn_ProcessReezy_Click" Foreground="White" Background="#FF343A40" BorderBrush="#FF495057"/>
                 <ProgressBar x:Name="PB_SongsReezy" Height="10" Canvas.Left="271" Canvas.Top="749" Width="626" HorizontalAlignment="Left" VerticalAlignment="Center" />
                 <Image x:Name="Img_Herz" Height="54" Canvas.Left="935" Canvas.Top="727" Width="71" Source="/heart_icon_125260.png" MouseLeftButtonDown="Img_Herz_MouseLeftButtonDown" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </Canvas>
-            <Label x:Name="Lbl_DeineLieblingskünstler_Kopieren" Content="Deine Lieblingssongs" Height="51" Width="353" FontWeight="Bold" FontSize="30" Canvas.Left="25" Canvas.Top="576" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Label x:Name="Lbl_DeineLieblingskünstler_Text" Content="in Bearbeitung (Umsetzung folgt)" Height="51" Width="354" FontWeight="Bold" FontSize="15" Canvas.Left="42" Canvas.Top="632" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label x:Name="Lbl_DeineLieblingskünstler_Kopieren" Content="Deine Lieblingssongs" Height="51" Width="354" FontWeight="Bold" FontSize="30" Canvas.Left="62" Canvas.Top="576" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <ListBox x:Name="Lb_Lieblingssongs" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="40" Canvas.Top="632" Width="387" Height="209" Background="#FF343A40" SelectionChanged="Lb_Lieblingssongs_SelectionChanged" Foreground="#FFFFF6F6" BorderBrush="#FF343A40"/>
         </Canvas>
         <Image Margin="-964,532,2522,358" Source="/Image2.png" Stretch="Fill"/>
     </Grid>
