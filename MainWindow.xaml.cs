@@ -240,27 +240,15 @@ namespace Spotify
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT * from lieblingssongs", conn);
+           
 
-            MySqlDataReader reader = cmd.ExecuteReader();
+           
 
-            while (reader.Read())
-            {
-                lieblingssongs.Add(new songinformationen(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(),
-                                                    reader[3].ToString(), Convert.ToDateTime(reader[4]), Convert.ToInt32(reader[5]),
-                                                    reader[6].ToString()));
-            }
-
-            /* for (int i = 0; i < lieblingssongs.Count; i++)
-             {
-                 Lb_AusgabeReezy.Items.Add(songlisteReezy[i].TiteldesSongs + " ~ " + songlisteReezy[i].Künstler);
-                 Lb_AusgabeReezy.FontSize = 24;
-             }*/
-
-            string query = "Insert Into lieblingssongs (Titel des Songs,Künstler/Interpret,Albumname,Erscheinungsjahr,Dauer,Song) Values (@Titel des Songs,@Künstler/Interpret,@Albumname,@Erscheinungsjahr,@Dauer,@Song)";
+            MySqlConnection cmd = new MySqlConnection("Insert Into lieblingssongs Values (@Titel des Songs,@Künstler/Interpret,@Albumname,@Erscheinungsjahr,@Dauer,@Song)");
 
 
             // Füge Parameter hinzu und setze ihre Werte
+           
             cmd.Parameters.AddWithValue("@Titel", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].TiteldesSongs);
             cmd.Parameters.AddWithValue("@Interpret", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].Künstler);
             cmd.Parameters.AddWithValue("@Albumname", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].Albumname);
@@ -268,7 +256,9 @@ namespace Spotify
             cmd.Parameters.AddWithValue("@Dauer", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].DauerSEK);
             cmd.Parameters.AddWithValue("@Song", songlisteReezy[Lb_AusgabeReezy.SelectedIndex].Song);
 
-                reader.Close();
+
+           
+            
             conn.Close();
 
 
