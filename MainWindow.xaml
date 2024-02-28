@@ -44,7 +44,7 @@
                 <ProgressBar x:Name="PB_SongsTravis" Height="10" Canvas.Left="274" Canvas.Top="746" Width="623" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
             </Canvas>
-            <Canvas x:Name="Canvas_Reezy" Height="1064" Width="1454" Canvas.Left="466" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF495057" d:IsHidden="True">
+            <Canvas x:Name="Canvas_Reezy" Height="1064" Width="1454" Canvas.Left="466" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF495057">
                 <Canvas x:Name="RezzyHeadline" Height="312" Width="1454" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF212529">
                     <TextBox x:Name="TitelAlbumReezy" Canvas.Left="386" TextWrapping="Wrap" Text="TextBox" Canvas.Top="96" Width="1064" Background="{x:Null}" Height="120" FontSize="72" BorderBrush="{x:Null}" IsReadOnly="True" SelectionBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" SelectionTextBrush="{x:Null}" Foreground="#FFF8F9FA"/>
                     <Image x:Name="Img_Reezy" Height="222" Canvas.Left="43" Canvas.Top="45" Width="291" Source="/reezy.jpg"/>
