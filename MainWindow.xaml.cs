@@ -366,5 +366,49 @@ namespace Spotify
 
             MusikAbspielenLieblingssongs(Lb_Lieblingssongs.SelectedIndex);*/
         }
+
+        private void Btn_AbsteigendReezy_Click(object sender, RoutedEventArgs e)
+        {
+            Lb_AusgabeReezy.Items.Clear();
+            songlisteReezy = songlisteReezy.OrderByDescending(a => a.TiteldesSongs).ToList();
+
+            for (int i = 0; i < songlisteReezy.Count; i++)
+            {
+                Lb_AusgabeReezy.Items.Add(songlisteReezy[i].TiteldesSongs + " ~ " + songlisteReezy[i].Künstler);
+            }
+        }
+
+        private void Btn_AufsteigenReezy_Click(object sender, RoutedEventArgs e)
+        {
+            Lb_AusgabeReezy.Items.Clear();
+            songlisteReezy = songlisteReezy.OrderBy(a => a.TiteldesSongs).ToList();
+
+            for (int i = 0; i < songlisteReezy.Count; i++)
+            {
+                Lb_AusgabeReezy.Items.Add(songlisteReezy[i].TiteldesSongs + " ~ " + songlisteReezy[i].Künstler);
+            }
+        }
+
+        private void Btn_AbsteigenTravis_Click(object sender, RoutedEventArgs e)
+        {
+            Lb_AusgabeTravis.Items.Clear();
+            songlisteTravis = songlisteTravis.OrderByDescending(a => a.TiteldesSongs).ToList();
+
+            for (int i = 0; i < songlisteTravis.Count; i++)
+            {
+                Lb_AusgabeTravis.Items.Add(songlisteTravis[i].TiteldesSongs + " ~ " + songlisteTravis[i].Künstler);
+            }
+        }
+
+        private void Btn_AufsteigenTravis_Click(object sender, RoutedEventArgs e)
+        {
+            Lb_AusgabeTravis.Items.Clear();
+            songlisteTravis = songlisteTravis.OrderBy(a => a.TiteldesSongs).ToList();
+
+            for (int i = 0; i < songlisteTravis.Count; i++)
+            {
+                Lb_AusgabeTravis.Items.Add(songlisteTravis[i].TiteldesSongs + " ~ " + songlisteTravis[i].Künstler);
+            }
+        }
     }
 }
