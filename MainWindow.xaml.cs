@@ -33,6 +33,7 @@ namespace Spotify
         }
         private delegate void UpdateProgressBarDelegate(
         System.Windows.DependencyProperty dp, Object value);
+        List<songinformationen> songliste = new List<songinformationen>();
         List<songinformationen> songlisteReezy = new List<songinformationen>();
         List<songinformationen> songlisteTravis = new List<songinformationen>();
         List<songinformationen> lieblingssongs = new List<songinformationen>();
@@ -62,13 +63,17 @@ namespace Spotify
 
             while (reader.Read())
             {
-                songlisteReezy.Add(new songinformationen(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(),
+                songliste.Add(new songinformationen(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(),
                                                     reader[3].ToString(), Convert.ToDateTime(reader[4]), Convert.ToInt32(reader[5]),
                                                     reader[6].ToString()));
             }
 
+
+            songlisteReezy = songliste.Where(a => a.Künstler == "Reezy").ToList();
+
             for (int i = 0; i < songlisteReezy.Count; i++)
             {
+               
                 Lb_AusgabeReezy.Items.Add(songlisteReezy[i].TiteldesSongs + " ~ " + songlisteReezy[i].Künstler);
                 Lb_AusgabeReezy.FontSize = 24;
             }
@@ -139,32 +144,16 @@ namespace Spotify
             player.Play();
         }
 
-       /* public void MusikAbspielenLieblingssongs(int x)
-        {
-           *//* SoundPlayer player = new SoundPlayer(lieblingssongs[x].Song);
-            player.Play();*//*
-        }*/
-
+      
         private void Canvas_Loaded(object sender, RoutedEventArgs e)
         {
-            string connectionString = "datasource = 127.0.0.1; port = 3306; username = root; password = root; database = it-woche-2024";
-
-            MySqlConnection conn = new MySqlConnection(connectionString);
-            conn.Open();
-
-            MySqlCommand cmd = new MySqlCommand("SELECT * from songinformationentravis", conn);
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                songlisteTravis.Add(new songinformationen(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(),
-                                                    reader[3].ToString(), Convert.ToDateTime(reader[4]), Convert.ToInt32(reader[5]),
-                                                    reader[6].ToString()));
-            }
+           
+ 
+            songlisteTravis = songliste.Where(a => a.Künstler == "Travis Scott").ToList();
 
             for (int i = 0; i < songlisteTravis.Count; i++)
             {
+                
                 Lb_AusgabeTravis.Items.Add(songlisteTravis[i].TiteldesSongs + " ~ " + songlisteTravis[i].Künstler);
                 Lb_AusgabeTravis.FontSize = 24;
             }
