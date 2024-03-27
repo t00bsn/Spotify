@@ -31,6 +31,8 @@ namespace Spotify
             InitializeComponent();
             
         }
+
+        Random test = new Random();
         private delegate void UpdateProgressBarDelegate(
         System.Windows.DependencyProperty dp, Object value);
         List<songinformationen> songliste = new List<songinformationen>();
