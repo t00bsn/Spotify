@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920" Loaded="Window_Loaded">
     <Grid>
-        <Canvas x:Name="LoginCanvas" Background="#FF212529" d:IsHidden="True">
+        <Canvas x:Name="LoginCanvas" Background="#FF212529">
             <TextBlock x:Name="TB_Willkommen"  Canvas.Left="486" TextWrapping="Wrap" Canvas.Top="191" Height="266" Width="948" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="90" FontWeight="Bold" TextAlignment="Center" Foreground="#FFF8F9FA"><Run Language="de-de" Text="Willkommen bei"/><LineBreak/><Run Language="de-de" Text="Tobify / Didify"/></TextBlock>
             <Button x:Name="Btn_anmelden" Content="anmelden" Canvas.Left="883" Canvas.Top="799" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="152" Background="#FF495057" BorderBrush="{x:Null}" Foreground="#FFF8F9FA" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Click="Btn_anmelden_Click" FontSize="25"/>
             <PasswordBox x:Name="PB_passwort" Canvas.Left="736" Canvas.Top="707" Width="447" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Background="#FF495057" Foreground="#FFF8F9FA" BorderBrush="{x:Null}" FontSize="25"/>
