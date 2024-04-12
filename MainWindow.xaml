@@ -12,19 +12,19 @@
             <Label x:Name="BG_Lbl1" Height="1064" Width="466" Background="#FF343A40" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Ellipse x:Name="El_Profilbild" Height="66" Stroke="Black" Width="65" HorizontalAlignment="Left" Canvas.Left="10" Canvas.Top="10" VerticalAlignment="Top" MouseLeftButtonDown="El_Profilbild_MouseLeftButtonDown">
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource="/1674811924048.jpg"/>
+                    <ImageBrush ImageSource="/1674811924048.png"/>
                 </Ellipse.Fill>
             </Ellipse>
             <Label x:Name="Lbl_WillkommenUser" Content="Willkommen [username]!" Height="34" Width="347" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Canvas.Left="80" Canvas.Top="26" VerticalAlignment="Top" Foreground="White"/>
             <Label x:Name="Lbl_DeineLieblingskünstler" Content="Deine Lieblingskünstler:" Height="51" Width="353" FontWeight="Bold" FontSize="30" Canvas.Left="25" Canvas.Top="222" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Ellipse x:Name="El_reezy" Height="136" Width="136" Canvas.Left="25" Canvas.Top="296" HorizontalAlignment="Center" VerticalAlignment="Top" MouseLeftButtonDown="El_reezy_MouseLeftButtonDown">
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource="/reezy.jpg"/>
+                    <ImageBrush ImageSource="/reezy.png"/>
                 </Ellipse.Fill>
             </Ellipse>
             <Ellipse x:Name="El_Travis_Scott" Height="136" Width="136" Canvas.Left="218" Canvas.Top="296" HorizontalAlignment="Center" VerticalAlignment="Top" MouseLeftButtonDown="El_Travis_Scott_MouseLeftButtonDown">
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource="/travis scott.jpg"/>
+                    <ImageBrush ImageSource="/travis scott.png"/>
                 </Ellipse.Fill>
             </Ellipse>
             <Label x:Name="Lbl_reezyName" Content="reezy" Height="37" Width="62" FontWeight="Bold" FontSize="20" Canvas.Left="62" Canvas.Top="432" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
@@ -49,7 +49,7 @@
             <Canvas x:Name="Canvas_Reezy" Height="1064" Width="1454" Canvas.Left="466" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF495057">
                 <Canvas x:Name="RezzyHeadline" Height="312" Width="1454" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF212529">
                     <TextBox x:Name="TitelAlbumReezy" Canvas.Left="386" TextWrapping="Wrap" Text="TextBox" Canvas.Top="96" Width="1064" Background="{x:Null}" Height="120" FontSize="72" BorderBrush="{x:Null}" IsReadOnly="True" SelectionBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" SelectionTextBrush="{x:Null}" Foreground="#FFF8F9FA"/>
-                    <Image x:Name="Img_Reezy" Height="222" Canvas.Left="43" Canvas.Top="45" Width="291" Source="/reezy.jpg"/>
+                    <Image x:Name="Img_Reezy" Height="222" Canvas.Left="43" Canvas.Top="45" Width="291" Source="/reezy.png"/>
                     <TextBox x:Name="KünstlerNameAlbumReezy" Canvas.Left="413" TextWrapping="Wrap" Text="TextBox" Canvas.Top="189" Width="1064" Background="{x:Null}" Height="43" FontSize="30" BorderBrush="{x:Null}" IsReadOnly="True" SelectionBrush="{x:Null}" FontWeight="Bold" SelectionTextBrush="{x:Null}" Foreground="#FFF8F9FA" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                     <Button x:Name="Btn_AbsteigendReezy" Content="Nach Titel Absteigend" Canvas.Left="56" Canvas.Top="273" HorizontalAlignment="Center" VerticalAlignment="Top" Width="133" Height="29" Foreground="White" Background="#FF495057" BorderBrush="{x:Null}" Click="Btn_AbsteigendReezy_Click"/>
                     <Button x:Name="Btn_AufsteigenReezy" Content="Nach Titel Aufsteigend" Canvas.Left="194" Canvas.Top="273" HorizontalAlignment="Left" Height="29" VerticalAlignment="Center" Width="132" Background="#FF495057" BorderBrush="{x:Null}" Foreground="#FFF7F7F7" Click="Btn_AufsteigenReezy_Click"/>
