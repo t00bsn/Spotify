@@ -13,6 +13,7 @@
     <None Remove="heart_filled_icon_125259.png" />
     <None Remove="heart_icon_125260.png" />
     <None Remove="Image3.png" />
+    <None Remove="MicrosoftTeams-image %288%29.png" />
     <None Remove="reezy.jpg" />
     <None Remove="travis scott.jpg" />
     <None Remove="travis-scott-wallpaper-onsbze5ivm3a9bx6.jpg" />
@@ -23,9 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="heart_filled_icon_125259.png" />
-    <Resource Include="heart_icon_125260.png" />
     <Resource Include="Image3.png" />
+    <Resource Include="MicrosoftTeams-image (8).png" />
     <Resource Include="travis-scott-wallpaper-onsbze5ivm3a9bx6.jpg" />
   </ItemGroup>
 

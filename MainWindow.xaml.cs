@@ -97,8 +97,8 @@ namespace Spotify
             Lb_AusgabeTravis.Visibility = Visibility.Hidden;
             PB_SongsReezy.Visibility = Visibility.Visible;
             Btn_ProcessReezy.Visibility = Visibility.Visible;
-            Img_HerzTravis.Visibility = Visibility.Hidden;
-            Img_Herz.Visibility = Visibility.Visible;
+            //Img_HerzTravis.Visibility = Visibility.Hidden;
+           // Img_Herz.Visibility = Visibility.Visible;
             TitelAlbumReezy.Text = songlisteReezy[0].Albumname;
             TitelAlbumReezy.Text.ToUpper();
             KünstlerNameAlbumReezy.Text = "- " + songlisteReezy[0].Künstler;
@@ -122,8 +122,8 @@ namespace Spotify
             Lb_AusgabeReezy.Visibility = Visibility.Hidden;
             Lb_AusgabeTravis.Visibility = Visibility.Visible;
             Img_TravisScott.Visibility = Visibility.Visible;
-            Img_Herz.Visibility = Visibility.Hidden;
-            Img_HerzTravis.Visibility= Visibility.Visible;
+           // Img_Herz.Visibility = Visibility.Hidden;
+            //Img_HerzTravis.Visibility= Visibility.Visible;
             TitelAlbumTravisScott.Text = songlisteTravis[0].Albumname;
             TitelAlbumTravisScott.Text.ToUpper();
             KünstlerNameAlbumTravisScott.Text = "- " + songlisteTravis[0].Künstler ;
@@ -225,7 +225,7 @@ namespace Spotify
             Process(PB_SongsTravis);
         }
 
-        private void Img_Herz_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+       /* private void Img_Herz_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             
             // Den Pfad zum neuen Bild festlegen
@@ -267,7 +267,7 @@ namespace Spotify
 
 
 
-        }
+        }*/
 
         private void ChangeImage(string imagePath)
         {
@@ -280,7 +280,7 @@ namespace Spotify
                 bitmap.EndInit();
 
                 // Set the image control's source to the loaded image
-                Img_Herz.Source = bitmap;
+               // Img_Herz.Source = bitmap;
             }
             catch (Exception ex)
             {
