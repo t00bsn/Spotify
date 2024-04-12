@@ -44,6 +44,8 @@
                 <ProgressBar x:Name="PB_SongsTravis" Height="10" Canvas.Left="274" Canvas.Top="746" Width="623" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
             </Canvas>
+            <Label x:Name="Lbl_DeineLieblingskünstler_Kopieren" Content="Deine Lieblingssongs" Height="51" Width="354" FontWeight="Bold" FontSize="30" Canvas.Left="62" Canvas.Top="576" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <ListBox x:Name="Lb_Lieblingssongs" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="40" Canvas.Top="632" Width="387" Height="209" Background="#FF343A40" SelectionChanged="Lb_Lieblingssongs_SelectionChanged" Foreground="#FFFFF6F6" BorderBrush="#FF343A40"/>
             <Canvas x:Name="Canvas_Reezy" Height="1064" Width="1454" Canvas.Left="466" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF495057">
                 <Canvas x:Name="RezzyHeadline" Height="312" Width="1454" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF212529">
                     <TextBox x:Name="TitelAlbumReezy" Canvas.Left="386" TextWrapping="Wrap" Text="TextBox" Canvas.Top="96" Width="1064" Background="{x:Null}" Height="120" FontSize="72" BorderBrush="{x:Null}" IsReadOnly="True" SelectionBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" SelectionTextBrush="{x:Null}" Foreground="#FFF8F9FA"/>
@@ -57,8 +59,6 @@
                 <Button x:Name="Btn_ProcessReezy" Content="Song Spielen" Canvas.Left="40" Canvas.Top="720" Height="68" Width="201" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Btn_ProcessReezy_Click" Foreground="White" Background="#FF343A40" BorderBrush="#FF495057"/>
                 <ProgressBar x:Name="PB_SongsReezy" Height="10" Canvas.Left="271" Canvas.Top="749" Width="626" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Canvas>
-            <Label x:Name="Lbl_DeineLieblingskünstler_Kopieren" Content="Deine Lieblingssongs" Height="51" Width="354" FontWeight="Bold" FontSize="30" Canvas.Left="62" Canvas.Top="576" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <ListBox x:Name="Lb_Lieblingssongs" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="40" Canvas.Top="632" Width="387" Height="209" Background="#FF343A40" SelectionChanged="Lb_Lieblingssongs_SelectionChanged" Foreground="#FFFFF6F6" BorderBrush="#FF343A40"/>
         </Canvas>
         <Image Margin="-964,532,2522,358" Source="/Image2.png" Stretch="Fill"/>
     </Grid>
